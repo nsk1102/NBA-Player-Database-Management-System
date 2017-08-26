@@ -1,0 +1,58 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
+--
+-- Host: localhost    Database: basketball
+-- ------------------------------------------------------
+-- Server version	5.7.17
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Coach`
+--
+
+DROP TABLE IF EXISTS `Coach`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Coach` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) DEFAULT NULL,
+  `bornDate` varchar(200) DEFAULT NULL,
+  `height` double DEFAULT NULL,
+  `weight` double DEFAULT NULL,
+  `hallOfFame` tinyint(1) DEFAULT NULL,
+  `coaching` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `coaching` (`coaching`),
+  CONSTRAINT `coach_ibfk_1` FOREIGN KEY (`coaching`) REFERENCES `Team` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Coach`
+--
+
+LOCK TABLES `Coach` WRITE;
+/*!40000 ALTER TABLE `Coach` DISABLE KEYS */;
+INSERT INTO `Coach` VALUES (1,'Woodson','\"1966-01-01\"',180,79.16666667,0,1),(2,'Rivers','\"1966-01-01\"',181,76.16666667,0,2),(3,'Del Negro','\"1966-01-01\"',182,75.16666667,0,3),(4,'Brown','\"1966-01-01\"',183,71.66666667,0,4),(5,'Brown','\"1966-01-01\"',184,72.16666667,0,5),(6,'Carlisle','\"1966-01-01\"',185,72.66666667,1,6),(7,'Karl','\"1966-01-01\"',186,73.16666667,0,7),(8,'Kuester','\"1966-01-01\"',187,73.66666667,0,8),(9,'Nelson','\"1966-01-01\"',188,74.16666667,1,9),(10,'Adelman','\"1966-01-01\"',189,74.66666667,0,10),(11,'O\'Brien','\"1966-01-01\"',190,75.16666667,0,11),(12,'Dunleavy','\"1966-01-01\"',191,75.66666667,0,12),(13,'Hughes','\"1966-01-01\"',192,76.16666667,1,13),(14,'Jackson','\"1966-01-01\"',193,76.66666667,1,14),(15,'Hollins','\"1966-01-01\"',194,77.16666667,1,15),(16,'Spoelstra','\"1966-01-01\"',195,77.66666667,0,16),(17,'Skiles','\"1966-01-01\"',196,78.16666667,0,17),(18,'Rambis','\"1966-01-01\"',197,78.66666667,0,18),(19,'Frank','\"1966-01-01\"',180,79.16666667,0,19),(20,'Barrise','\"1966-01-01\"',181,79.66666667,0,20),(21,'Vandeweghe','\"1966-01-01\"',182,80.16666667,1,21),(22,'Scott','\"1966-01-01\"',183,80.66666667,0,22),(23,'Bower','\"1966-01-01\"',184,81.16666667,0,23),(24,'D\'Antoni','\"1966-01-01\"',185,81.66666667,0,24),(25,'Brooks','\"1966-01-01\"',186,82.16666667,0,25),(26,'Van Gundy','\"1966-01-01\"',187,82.66666667,1,26),(27,'Jordan','\"1966-01-01\"',188,83.16666667,0,27),(28,'Gentry','\"1966-01-01\"',189,83.66666667,0,28),(29,'McMillan','\"1966-01-01\"',190,84.16666667,0,29),(30,'Westphal','\"1966-01-01\"',191,84.66666667,1,30);
+/*!40000 ALTER TABLE `Coach` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-04-19 19:43:51
